@@ -7,7 +7,7 @@ using System.Text;
  date:july25,2017
  Description:this is the deck class which inherits from list card
  this class sreates a new list type-card
- version:0.1-created class Deck
+ version:0.2-fixed bug
  */
 namespace comp123_S2017_lesson11
 {
@@ -33,9 +33,9 @@ namespace comp123_S2017_lesson11
         /// </summary>
         private void _initialize()
         {
-            for (int suit = 0; suit < (int)Suit.Spades; suit++)
+            for (int suit = 0; suit <= (int)Suit.Spades; suit++)
             {
-                for (int face = 0; face < (int)Face.King; face++)
+                for (int face = 1; face <= (int)Face.King; face++)
                 {
                     this.Add(new Card((Face)face, (Suit)suit));
                 }
@@ -53,7 +53,7 @@ namespace comp123_S2017_lesson11
             string outputString = "";
             foreach (Card card in this)
             {
-                outputString += "the" + card.Face + "of" + card.Suit + "\n";
+                outputString += "the " + card.Face + " of " + card.Suit + " \n";
             }
             return outputString;
         }
